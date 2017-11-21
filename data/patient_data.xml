@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record model="unmc.patient" id="user0">
+      <field name="first_name">Ally</field>
+      <field name="last_name">Khady</field>
+      <field name="age">15</field>
+    </record>
+    <record model="unmc.patient" id="user1">
+      <field name="first_name">James</field>
+      <field name="last_name">Smith</field>
+      <field name="age">20</field>
+    </record>
+  </data>
+</odoo>

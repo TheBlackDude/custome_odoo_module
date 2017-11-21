@@ -26,9 +26,11 @@
     'data': [
         # 'security/ir.model.access.csv',
         # 'templates.xml',
+        'data/patient_data.xml',
+        'views/patient_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo.xml',
+        # 'demo.xml',
     ],
 }

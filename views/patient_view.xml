@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- patient form view -->
+        <record model="ir.ui.view" id="patient_form_view">
+            <field name="name">patient.form</field>
+            <field name="model">unmc.patient</field>
+            <field name="arch" type="xml">
+                <form string="Patient Form">
+                    <sheet>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                        </group>
+                        <notebook>
+                            <page string="Age">
+                                <field name="age"/>
+                            </page>
+                            <page string="About">
+                                This is an example of notebooks
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- search view -->
+        <record model="ir.ui.view" id="patient_search_view">
+            <field name="name">patient.search</field>
+            <field name="model">unmc.patient</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                </search>
+            </field>
+        </record>
+        <!-- window action -->
+        <!-- the following tag is an action definition for a "window action",
+             that is an action opening a view or sets of views
+        -->
+        <record model="ir.actions.act_window" id="patient_list_action">
+            <field name="first_name">Patients</field>
+            <field name="res_model">unmc.patient</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first patient</p>
+            </field>
+        </record>
+        <!-- top level menu: no parent -->
+        <menuitem id="main_unmc_menu" name="Unmc"/>
+        <!-- A first level in the left side menu is needed before using
+             action = attribute -->
+        <menuitem id="unmc_menu" name="Unmc" parent="main_unmc_menu"/>
+        <!-- the following menuitem should appear *after* its parent
+             unmc_menu and *after* its action user_list_action -->
+        <menuitem id="users_menu" name="Users" parent="unmc_menu"
+            action="patient_list_action"/>
+        <!-- Full id location:
+             action="unmc.user_list_action"
+             It is not required when it is the same module. -->
+
+         <!-- lab form view -->
+         <record model="ir.ui.view" id="test_form_view">
+             <field name="name">test.form</field>
+             <field name="model">unmc.test</field>
+             <field name="arch" type="xml">
+                 <form string="Test Form">
+                     <sheet>
+                         <group>
+                             <field name="test_type"/>
+                             <field name="result"/>
+                             <field name="summary"/>
+                             <field name="date_taken"/>
+                         </group>
+                     </sheet>
+                 </form>
+             </field>
+         </record>
+
+         <record model="ir.actions.act_window" id="test_list_action">
+            <field name="test_type">Tests</field>
+            <field name="res_model">unmc.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="test_menu" name="Tests"
+                  parent="unmc_menu"
+                  action="test_list_action"/>
+    </data>
+</odoo>
