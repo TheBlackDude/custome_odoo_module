@@ -40,7 +40,7 @@
              that is an action opening a view or sets of views
         -->
         <record model="ir.actions.act_window" id="patient_list_action">
-            <field name="first_name">Patients</field>
+            <field name="name">Patients</field>
             <field name="res_model">unmc.patient</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -55,7 +55,7 @@
         <menuitem id="unmc_menu" name="Unmc" parent="main_unmc_menu"/>
         <!-- the following menuitem should appear *after* its parent
              unmc_menu and *after* its action user_list_action -->
-        <menuitem id="users_menu" name="Users" parent="unmc_menu"
+        <menuitem id="users_menu" name="Patiens" parent="unmc_menu"
             action="patient_list_action"/>
         <!-- Full id location:
              action="unmc.user_list_action"
@@ -80,7 +80,7 @@
          </record>
 
          <record model="ir.actions.act_window" id="test_list_action">
-            <field name="test_type">Tests</field>
+            <field name="name">Tests</field>
             <field name="res_model">unmc.test</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>

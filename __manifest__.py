@@ -29,8 +29,9 @@
         'data/patient_data.xml',
         'views/patient_view.xml',
     ],
+    'application': True,
     # only loaded in demonstration mode
-    'demo': [
-        # 'demo.xml',
-    ],
+    # 'demo': [
+    #     # 'demo.xml',
+    # ],
 }
